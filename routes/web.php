@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
@@ -30,3 +31,6 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 //dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
+//admin
+Route::resource('about', AboutController::class)->middleware('auth');

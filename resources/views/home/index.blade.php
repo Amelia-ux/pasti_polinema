@@ -49,12 +49,12 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html" class="active">Beranda</a></li>
-          <li><a href="tentang.html">Tentang</a></li>
-          <li><a href="proker.html">Program Kerja</a></li>
-          <li><a href="struktur.html">Struktur Organisasi</a></li>
-          <li><a href="kontak.html">Kontak</a></li>
-          <li><a class="get-a-quote" href="get-a-quote.html">Masuk</a></li>
+          <li><a href="/" class="active">Beranda</a></li>
+          <li><a href="/tentang">Tentang</a></li>
+          <li><a href="/proker">Program Kerja</a></li>
+          <li><a href="/struktur">Struktur Organisasi</a></li>
+          <li><a href="/kontak">Kontak</a></li>
+          <li><a class="get-a-quote" href="/login">Masuk</a></li>
         </ul>
       </nav>
       <!-- .navbar -->

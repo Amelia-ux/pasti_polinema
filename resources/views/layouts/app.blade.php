@@ -6,25 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <title>PASTI - Content Management System</title>
-    <link rel="apple-touch-icon" href="assets/app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/app-assets/images/ico/logo pasti.jpg">
+    <link rel="apple-touch-icon" href="{{ asset('assets/app-assets/images/ico/apple-icon-120.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/app-assets/images/ico/logo pasti.jpg') }}">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i|Comfortaa:300,400,500,700" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/app-assets/css/vendors.css">
-    <link rel="stylesheet" type="text/css" href="assets/app-assets/vendors/css/charts/chartist.css">
-    <link rel="stylesheet" type="text/css" href="assets/app-assets/vendors/css/charts/chartist-plugin-tooltip.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/app-assets/css/vendors.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/app-assets/vendors/css/charts/chartist.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/app-assets/vendors/css/charts/chartist-plugin-tooltip.css') }}">
     <!-- END VENDOR CSS-->
     <!-- BEGIN MODERN CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/app-assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/app-assets/css/app.css') }}">
     <!-- END MODERN CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/app-assets/css/core/menu/menu-types/vertical-compact-menu.css">
-    <link rel="stylesheet" type="text/css" href="assets/app-assets/vendors/css/cryptocoins/cryptocoins.css">
-    <link rel="stylesheet" type="text/css" href="assets/app-assets/css/pages/timeline.css">
-    <link rel="stylesheet" type="text/css" href="assets/app-assets/css/pages/dashboard-ico.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/app-assets/css/core/menu/menu-types/vertical-compact-menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/app-assets/vendors/css/cryptocoins/cryptocoins.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/app-assets/css/pages/timeline.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/app-assets/css/pages/dashboard-ico.css') }}">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/assets/css/style.css') }}">
     <!-- END Custom CSS-->
 </head>
 
@@ -36,7 +36,7 @@
             <div class="navbar-header d-md-none">
                 <ul class="nav navbar-nav flex-row">
                     <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
-                    <li class="nav-item d-md-none"><a class="navbar-brand" href="index.html"><img class="brand-logo d-none d-md-block" alt="CryptoDash admin logo" src="assets/app-assets/images/logo/logo.png"><img class="brand-logo d-sm-block d-md-none" alt="CryptoDash admin logo sm" src="assets/app-assets/images/logo/logo-sm.png"></a></li>
+                    <li class="nav-item d-md-none"><a class="navbar-brand" href="index.html"><img class="brand-logo d-none d-md-block" alt="CryptoDash admin logo" src="{{ asset('assets/app-assets/images/logo/logo.png') }}"><img class="brand-logo d-sm-block d-md-none" alt="CryptoDash admin logo sm" src="{{ asset('assets/app-assets/images/logo/logo-sm.png') }}"></a></li>
                     <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="la la-ellipsis-v"> </i></a></li>
                 </ul>
             </div>
@@ -60,31 +60,14 @@
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
 
-    <div class="main-menu menu-fixed menu-dark menu-bg-default rounded menu-accordion menu-shadow">
-        <div class="main-menu-content"><a class="navigation-brand d-none d-md-block d-lg-block d-xl-block" href="index.html"><img class="brand-logo" alt="CryptoDash admin logo" src="assets/app-assets/images/ico/logo pasti.jpg" /></a>
-            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="active"><a href="assets/html/ltr/vertical-menu/index.html"><i class="icon-home"></i></i><span class="menu-title" data-i18n="">Dashboard</span></a>
-                </li>
-                <li class=" nav-item"><a href="/" target="_blank"><i class="icon-eye"></i><span class="menu-title" data-i18n="">Lihat Website</span></a>
-                </li>
-                <li class=" nav-item"><a href="#"><i class="icon-grid"></i><span class="menu-title" data-i18n="">Data Tentang UKM</span></a>
-                </li>
-                <li class=" nav-item"><a href="/struktur"><i class="icon-users"></i><span class="menu-title" data-i18n="">Data DPH 26</span></a>
-                </li>
-                <li class=" nav-item"><a href="transactions.html"><i class="icon-calendar"></i><span class="menu-title" data-i18n="">Program Kerja</span></a>
-                </li>
-                <li class=" nav-item"><a href="faq.html"><i class="icon-envelope"></i><span class="menu-title" data-i18n="">Kontak</span></a>
-                </li>
-            </ul>
-        </div>
-    </div>
+
 
     <div class="app-content content">
         <div class="content-wrapper">
             <!-- Recent Transactions -->
             <div class="row">
                 <div id="recent-transactions" class="col-12">
-                    <h6 class="my-2">@yield('title', 'Dashboard')</h6>
+                    <h6 class="my-2">@yield('title')</h6>
                     @yield('content')
                 </div>
             </div>
@@ -102,19 +85,19 @@
     </footer>
 
     <!-- BEGIN VENDOR JS-->
-    <script src="assets/app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <script src="{{ asset('assets/app-assets/vendors/js/vendors.min.js') }}" type="text/javascript"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src="assets/app-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
-    <script src="assets/app-assets/vendors/js/charts/chartist-plugin-tooltip.min.js" type="text/javascript"></script>
-    <script src="assets/app-assets/vendors/js/timeline/horizontal-timeline.js" type="text/javascript"></script>
+    <script src="{{ asset('assets/app-assets/vendors/js/charts/chartist.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/app-assets/vendors/js/charts/chartist-plugin-tooltip.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/app-assets/vendors/js/timeline/horizontal-timeline.js') }}" type="text/javascript"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN MODERN JS-->
-    <script src="assets/app-assets/js/core/app-menu.js" type="text/javascript"></script>
-    <script src="assets/app-assets/js/core/app.js" type="text/javascript"></script>
+    <script src="{{ asset('assets/app-assets/js/core/app-menu.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/app-assets/js/core/app.js') }}" type="text/javascript"></script>
     <!-- END MODERN JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="assets/app-assets/js/scripts/pages/dashboard-ico.js" type="text/javascript"></script>
+    <script src="{{ asset('assets/app-assets/js/scripts/pages/dashboard-ico.js') }}" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
 </body>
 
