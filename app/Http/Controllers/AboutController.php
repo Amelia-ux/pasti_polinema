@@ -45,16 +45,15 @@ class AboutController extends Controller
 
         $input = $request->all();
 
-        if($image = $request->file('image')) {
+        if ($image = $request->file('image')) {
             $destinationPath = 'image/';
-            $imageName = date('Ymd') . "." . $image->getClientOriginalExtension();
+            $imageName = $image->getClientOriginalName();
             $image->move($destinationPath, $imageName);
             $input['image'] = $imageName;
         }
 
         About::create($input);
         return redirect('/about')->with('message', 'Data berhasil ditambahkan');
-
     }
 
     /**
@@ -96,18 +95,17 @@ class AboutController extends Controller
 
         $input = $request->all();
 
-        if($image = $request->file('image')) {
+        if ($image = $request->file('image')) {
             $destinationPath = 'image/';
-            $imageName = date('Ymd') . "_" . time() . "." . $image->getClientOriginalExtension();
+            $imageName = $image->getClientOriginalName();
             $image->move($destinationPath, $imageName);
             $input['image'] = $imageName;
-        }else{
+        } else {
             unset($input['image']);
         }
 
         $about->update($input);
         return redirect('/about')->with('message', 'Data berhasil diubah');
-
     }
 
     /**
