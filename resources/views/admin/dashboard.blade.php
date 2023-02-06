@@ -9,7 +9,7 @@
             </li>
             <li class=" nav-item"><a href="/about"><i class="icon-grid"></i><span class="menu-title" data-i18n="">Data Tentang UKM</span></a>
             </li>
-            <li class=" nav-item"><a href="/struktur"><i class="icon-users"></i><span class="menu-title" data-i18n="">Data DPH 26</span></a>
+            <li class=" nav-item"><a href="/team"><i class="icon-users"></i><span class="menu-title" data-i18n="">Data DPH 26</span></a>
             </li>
             <li class=" nav-item"><a href="transactions.html"><i class="icon-calendar"></i><span class="menu-title" data-i18n="">Program Kerja</span></a>
             </li>
