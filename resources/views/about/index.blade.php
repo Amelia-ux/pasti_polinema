@@ -3,7 +3,7 @@
 @section('title', 'Tentang UKM')
 
 <div class="main-menu menu-fixed menu-dark menu-bg-default rounded menu-accordion menu-shadow">
-    <div class="main-menu-content"><a class="navigation-brand d-none d-md-block d-lg-block d-xl-block" href="index.html"><img class="brand-logo" alt="CryptoDash admin logo" src="assets/app-assets/images/ico/logo pasti.jpg" /></a>
+    <div class="main-menu-content"><a class="navigation-brand d-none d-md-block d-lg-block d-xl-block" href="index.html"><img class="brand-logo" alt="CryptoDash admin logo" src="{{ asset('assets/app-assets/images/ico/logo pasti.jpg') }}" /></a>
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class="nav-item"><a href="/dashboard"><i class="icon-home"></i></i><span class="menu-title" data-i18n="">Dashboard</span></a>
             </li>
@@ -28,7 +28,7 @@
 @section('content')
 
 @if ($message = Session::get('message'))
-<div class="alert alert-success" >
+<div class="alert alert-success">
     <strong>Berhasil</strong>
     <p>{{ $message }}</p>
 </div>
@@ -61,7 +61,12 @@
                             <img src="/image/{{$a->image}}" alt="" class="img-fluid" width="100">
                         </td>
                         <td class="text-truncate">
-                            <a href="{{ route('about.edit', $a->id) }}" class="mb-0 btn-sm btn btn-outline-warning round">Edit</a>
+                            <a href="{{ route('about.edit', $a->id) }}" class="mb-0 btn-sm btn btn-outline-warning round mb-1">Edit</a>
+                            <form action="{{ route('about.destroy', $a->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="mb-0 btn-sm btn btn-outline-danger round">Hapus</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

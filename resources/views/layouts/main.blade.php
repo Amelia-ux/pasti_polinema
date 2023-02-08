@@ -8,8 +8,8 @@
   <title>@yield('title') - PASTI POLINEMA</title>
 
   <!-- Favicons -->
-  <link href="{{ asset('guest/img/favicon.png') }}" rel="icon" />
-  <link href="{{ asset('guest/img/apple-touch-icon.pn') }}g" rel="apple-touch-icon" />
+  <link href="{{ asset('assets/app-assets/images/ico/logo pasti.jpg') }}" rel="icon" />
+  <link href="{{ asset('assets/app-assets/images/ico/logo pasti.jpg') }}" rel="apple-touch-icon" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

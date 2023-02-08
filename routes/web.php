@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\WorkplanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,3 +37,4 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 //admin
 Route::resource('/about', AboutController::class)->middleware('auth');
 Route::resource('/team', TeamController::class)->middleware('auth');
+Route::resource('/workplan', WorkplanController::class)->middleware('auth');

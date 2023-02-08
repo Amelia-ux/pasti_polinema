@@ -59,7 +59,12 @@
                         <td class="text-truncate">{{$t->division}}</td>
                         <td class="text-truncate">{{$t->position}}</td>
                         <td class="text-truncate">
-                            <a href="{{ route('team.edit', $t->id) }}" class="mb-0 btn-sm btn btn-outline-warning round">Edit</a>
+                            <a href="{{ route('team.edit', $t->id) }}" class="mb-0 btn-sm btn btn-outline-warning round mb-1">Edit</a>
+                            <form action="{{ route('team.destroy', $t->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="mb-0 btn-sm btn btn-outline-danger round">Hapus</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

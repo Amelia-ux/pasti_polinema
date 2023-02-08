@@ -89,7 +89,7 @@ class AboutController extends Controller
     {
         $request->validate([
             'title' => '',
-            'description' => 'required',
+            'description' => '',
             'image' => 'image'
         ]);
 
@@ -116,6 +116,8 @@ class AboutController extends Controller
      */
     public function destroy(About $about)
     {
-        //
+        $about->delete();
+
+        return redirect('/about')->with('message', 'Data berhasil dihapus');
     }
 }

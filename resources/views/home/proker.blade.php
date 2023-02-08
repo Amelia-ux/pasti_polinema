@@ -19,7 +19,6 @@
           <li><a href="/proker" class="active">Program Kerja</a></li>
           <li><a href="/struktur">Struktur Organisasi</a></li>
           <li><a href="/kontak" >Kontak</a></li>
-          <li><a class="get-a-quote" href="/login">Masuk</a></li>
         </ul>
       </nav>
       <!-- .navbar -->

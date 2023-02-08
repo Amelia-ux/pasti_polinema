@@ -5,13 +5,13 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <title>Logis Bootstrap Template - Index</title>
+  <title>UKM PASTI POLINEMA</title>
   <meta content="" name="description" />
   <meta content="" name="keywords" />
 
   <!-- Favicons -->
-  <link href="{{ asset('guest/img/favicon.png') }}" rel="icon" />
-  <link href="{{ asset('guest/img/apple-touch-icon.png') }}" rel="apple-touch-icon" />
+  <link href="{{ asset('assets/app-assets/images/ico/logo pasti.jpg') }}" rel="icon" />
+  <link href="{{ asset('assets/app-assets/images/ico/logo pasti.jpg') }}" rel="apple-touch-icon" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,7 +54,6 @@
           <li><a href="/proker">Program Kerja</a></li>
           <li><a href="/struktur">Struktur Organisasi</a></li>
           <li><a href="/kontak">Kontak</a></li>
-          <li><a class="get-a-quote" href="/login">Masuk</a></li>
         </ul>
       </nav>
       <!-- .navbar -->

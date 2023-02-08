@@ -90,9 +90,9 @@ class TeamController extends Controller
     public function update(Request $request, Team $team)
     {
         $request->validate([
-            'name' => 'required',
-            'division' => 'required',
-            'position' => 'required',
+            'name' => '',
+            'division' => '',
+            'position' => '',
             'image' => 'image'
         ]);
 
@@ -119,6 +119,8 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        //
+        $team->delete();
+
+        return redirect('/team')->with('message', 'Data berhasil dihapus');
     }
 }
