@@ -11,11 +11,15 @@
             </li>
             <li class=" nav-item"><a href="/about"><i class="icon-grid"></i><span class="menu-title" data-i18n="">Data Tentang UKM</span></a>
             </li>
+            <li class=" nav-item"><a href="/faq"><i class="icon-question"></i><span class="menu-title" data-i18n="">Data FAQ</span></a>
+            </li>
+            <li class=" nav-item"><a href="/relation"><i class="icon-cup"></i><span class="menu-title" data-i18n="">Data Relasi</span></a>
+            </li>
             <li class=" nav-item active"><a href="/team"><i class="icon-users"></i><span class="menu-title" data-i18n="">Data DPH 26</span></a>
             </li>
-            <li class=" nav-item"><a href="transactions.html"><i class="icon-calendar"></i><span class="menu-title" data-i18n="">Program Kerja</span></a>
+            <li class=" nav-item"><a href="/workplan"><i class="icon-calendar"></i><span class="menu-title" data-i18n="">Program Kerja</span></a>
             </li>
-            <li class=" nav-item"><a href="faq.html"><i class="icon-envelope"></i><span class="menu-title" data-i18n="">Kontak</span></a>
+            <li class=" nav-item"><a href="/contact"><i class="icon-envelope"></i><span class="menu-title" data-i18n="">Kontak</span></a>
             </li>
         </ul>
     </div>
