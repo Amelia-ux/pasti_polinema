@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Workplan;
+use App\Models\Relation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class WorkplanController extends Controller
+class RelationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class WorkplanController extends Controller
      */
     public function index()
     {
-        $workplan = DB::table('workplan')->simplePaginate(10);
-
-        return view('workplan.index', compact('workplan'));
+        $relation = DB::table('relation')->simplePaginate(10);
+        return view('relation.index', compact('relation'));
     }
 
     /**
@@ -27,7 +26,7 @@ class WorkplanController extends Controller
      */
     public function create()
     {
-        return view('workplan.create');
+        return view('relation.create');
     }
 
     /**
@@ -39,9 +38,7 @@ class WorkplanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'division' => 'required',
-            'name' => 'required',
-            'description' => 'required',
+            'instance' => 'required',
             'image' => 'required|image'
         ]);
 
@@ -54,17 +51,17 @@ class WorkplanController extends Controller
             $input['image'] = $imageName;
         }
 
-        Workplan::create($input);
-        return redirect('/workplan')->with('message', 'Data berhasil ditambahkan');
+        Relation::create($input);
+        return redirect('/relation')->with('message', 'Data berhasil ditambahkan');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Workplan  $workplan
+     * @param  \App\Models\Relation  $relation
      * @return \Illuminate\Http\Response
      */
-    public function show(Workplan $workplan)
+    public function show(Relation $relation)
     {
         //
     }
@@ -72,27 +69,25 @@ class WorkplanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Workplan  $workplan
+     * @param  \App\Models\Relation  $relation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Workplan $workplan)
+    public function edit(Relation $relation)
     {
-        return view('workplan.edit', compact('workplan'));
+        return view('relation.edit', compact('relation'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Workplan  $workplan
+     * @param  \App\Models\Relation  $relation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Workplan $workplan)
+    public function update(Request $request, Relation $relation)
     {
         $request->validate([
-            'division' => 'required',
-            'name' => '',
-            'description' => '',
+            'instance' => '',
             'image' => 'image'
         ]);
 
@@ -107,20 +102,20 @@ class WorkplanController extends Controller
             unset($input['image']);
         }
 
-        $workplan->update($input);
-        return redirect('/workplan')->with('message', 'Data berhasil diubah');
+        $relation->update($input);
+        return redirect('/relation')->with('message', 'Data berhasil diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Workplan  $workplan
+     * @param  \App\Models\Relation  $relation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Workplan $workplan)
+    public function destroy(Relation $relation)
     {
-        $workplan->delete();
+        $relation->delete();
 
-        return redirect('/workplan')->with('message', 'Data berhasil dihapus');
+        return redirect('/relation')->with('message', 'Data berhasil dihapus');
     }
 }
