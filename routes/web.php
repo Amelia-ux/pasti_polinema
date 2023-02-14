@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
@@ -42,3 +43,4 @@ Route::resource('/team', TeamController::class)->middleware('auth');
 Route::resource('/workplan', WorkplanController::class)->middleware('auth');
 Route::resource('/relation', RelationController::class)->middleware('auth');
 Route::resource('/faq', FaqController::class)->middleware('auth');
+Route::resource('/contact', ContactController::class)->middleware('auth');

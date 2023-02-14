@@ -9,7 +9,7 @@
             </li>
             <li class=" nav-item"><a href="/" target="_blank"><i class="icon-eye"></i><span class="menu-title" data-i18n="">Lihat Website</span></a>
             </li>
-            <li class=" nav-item active"><a href="/about"><i class="icon-grid"></i><span class="menu-title" data-i18n="">Data Tentang UKM</span></a>
+            <li class=" nav-item"><a href="/about"><i class="icon-grid"></i><span class="menu-title" data-i18n="">Data Tentang UKM</span></a>
             </li>
             <li class=" nav-item"><a href="/faq"><i class="icon-question"></i><span class="menu-title" data-i18n="">Data FAQ</span></a>
             </li>
@@ -19,7 +19,7 @@
             </li>
             <li class=" nav-item"><a href="/workplan"><i class="icon-calendar"></i><span class="menu-title" data-i18n="">Program Kerja</span></a>
             </li>
-            <li class=" nav-item"><a href="/contact"><i class="icon-envelope"></i><span class="menu-title" data-i18n="">Kontak</span></a>
+            <li class=" nav-item active"><a href="/contact"><i class="icon-envelope"></i><span class="menu-title" data-i18n="">Kontak</span></a>
             </li>
         </ul>
     </div>
@@ -27,7 +27,7 @@
 
 @section('content')
 <div class="col-12 text-right">
-    <a class="btn-gradient-primary my-1" href="/about/create">Tambah Data</a>
+    <a class="btn-gradient-primary my-1" href="/contact/create">Tambah Data</a>
 </div>
 @if ($message = Session::get('message'))
 <div class="alert alert-success">
@@ -39,32 +39,22 @@
 
     <div class="card-content">
         <div class="table-responsive">
-            <table id="recent-orders" class="table table-hover table-xl mb-0 mt-2">
+            <table id="recent-orders" class="table table-hover table-xl mb-0">
                 <thead>
                     <tr>
-                        <th class="border-top-0">Kategori</th>
-                        <th class="border-top-0">Isi</th>
-                        <th class="border-top-0">Foto</th>
+                        <th class="border-top-0">Jenis</th>
+                        <th class="border-top-0">Nama/Link</th>
                         <th class="border-top-0">Aksi</th>
-                        <th class="border-top-0"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($about as $a)
+                    @foreach ($contact as $con)
                     <tr>
-                        <td class="text-truncate">{{$a->title}}</td>
+                        <td class="text-truncate">{{$con->category}}</td>
+                        <td class="text-truncate">{{$con->link}}</td>
                         <td class="text-truncate">
-                            {{ Str::limit($a->description, 50) }}
-                            @if (strlen($a->description) > 50)
-                            <span>...</span>
-                            @endif
-                        </td>
-                        <td class="text-truncate">
-                            <img src="/image/{{$a->image}}" alt="" class="img-fluid" width="100">
-                        </td>
-                        <td class="text-truncate">
-                            <a href="{{ route('about.edit', $a->id) }}" class="mb-0 btn-sm btn btn-outline-warning round mb-1">Edit</a>
-                            <form action="{{ route('about.destroy', $a->id) }}" method="POST">
+                            <a href="{{ route('contact.edit', $con->id) }}" class="mb-0 btn-sm btn btn-outline-warning round mb-1">Edit</a>
+                            <form action="{{ route('contact.destroy', $con->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="mb-0 btn-sm btn btn-outline-danger round">Hapus</button>

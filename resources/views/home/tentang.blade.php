@@ -6,7 +6,7 @@
 <!-- ======= Header ======= -->
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-    <a href="index.html" class="logo d-flex align-items-center">
+    <a href="/" class="logo d-flex align-items-center">
       <img src="{{ asset('guest/img/logo pasti.jpg') }}" alt="" />
     </a>
 
@@ -42,7 +42,7 @@
   <nav>
     <div class="container">
       <ol>
-        <li><a href="index.html">Beranda</a></li>
+        <li><a href="/">Beranda</a></li>
         <li>Tentang</li>
       </ol>
     </div>
