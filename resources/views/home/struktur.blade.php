@@ -3,28 +3,28 @@
 @section('title', 'Struktur Organisasi')
 
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="/" class="logo d-flex align-items-center">
-        <img src="{{ asset('guest/img/logo pasti.jpg') }}" alt="" />
-      </a>
+<!-- ======= Header ======= -->
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+    <a href="/" class="logo d-flex align-items-center">
+      <img src="{{ asset('guest/img/logo pasti.jpg') }}" alt="" />
+    </a>
 
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      <nav id="navbar" class="navbar">
-        <ul>
+    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    <nav id="navbar" class="navbar">
+      <ul>
         <li><a href="/">Beranda</a></li>
-          <li><a href="/tentang" >Tentang</a></li>
-          <li><a href="/proker">Program Kerja</a></li>
-          <li><a href="/struktur" class="active">Struktur Organisasi</a></li>
-          <li><a href="/kontak" >Kontak</a></li>
-        </ul>
-      </nav>
-      <!-- .navbar -->
-    </div>
-  </header>
-  <!-- End Header -->
+        <li><a href="/tentang">Tentang</a></li>
+        <li><a href="/proker">Program Kerja</a></li>
+        <li><a href="/struktur" class="active">Struktur Organisasi</a></li>
+        <li><a href="/kontak">Kontak</a></li>
+      </ul>
+    </nav>
+    <!-- .navbar -->
+  </div>
+</header>
+<!-- End Header -->
 @section('breadcrumbs')
 <!-- ======= Breadcrumbs ======= -->
 <div class="breadcrumbs">
@@ -50,7 +50,7 @@
 <!-- End Breadcrumbs -->
 @endsection
 
-@section('contact')
+@section('content')
 <!-- ======= Our Team Section ======= -->
 <section id="team" class="team pt-0">
   <div class="container" data-aos="fade-up">
@@ -60,62 +60,18 @@
       <h2>DEWAN PENGURUS HARIAN 6</h2>
     </div>
     <div class="row g-2 g-md-4" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-6 col-md-3">
+      @foreach($team as $id=>$t)
+      @if($id <= 5) <div class="col-6 col-md-3">
         <div class="member">
-          <img src="{{ asset('guest/img/team/dph_ketum.jpg') }}" class="img-fluid" alt="" />
+          <img src="image/{{ $t->image }}" class="img-fluid" alt="" />
           <div class="member-content">
-            <h4>Shobir Juntri Yoga</h4>
-            <span>Ketua Umum</span>
+            <h4>{{ $t->name }}</h4>
+            <span>{{ $t->position }}</span>
           </div>
         </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/dph_waketum.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Alfian Wardhana Jarot Cantika Putra</h4>
-            <span>Wakil Ketua Umum</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/dph_sekum.png" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Wiam Ferdyansyah</h4>
-            <span>Sekretaris Umum</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/dph_bendum.png" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Iftahul Huda</h4>
-            <span>Bendahara Umum</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3"></div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/dph_sektu.png" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Andini Pramesti Kusumawardani</h4>
-            <span>Sekretaris Satu</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/dph_bentu.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Karmila Novi Arfiana</h4>
-            <span>Bendahara Satu</span>
-          </div>
-        </div>
-      </div>
     </div>
+    @endif
+    @endforeach
     <!-- End DPH 6 -->
 
     <!-- ======= BIDANG 1 ======= -->
@@ -124,224 +80,104 @@
       <h2>BIDANG 1 - INTERNAL</h2>
     </div>
     <div class="row g-2 g-md-4" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-6 col-md-3">
+      @foreach($team as $id=>$t)
+      @if($id >= 6 && $id<=9) <div class="col-6 col-md-3">
         <div class="member">
-          <img src="assets/img/team/1_kabid.jpg" class="img-fluid" alt="" />
+          <img src="image/{{ $t->image }}" class="img-fluid" alt="" />
           <div class="member-content">
-            <h4>Novian Putra Abdullah</h4>
-            <span>Ketua Bidang 1</span>
+            <h4>{{ $t->name }}</h4>
+            <span>{{ $t->position }}</span>
           </div>
         </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/1_sekbid.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Rosita Ayu Tri Lestari</h4>
-            <span>Sekretaris Bidang 1</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/1_kerohanian.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Dea Rizki Wulan Oktafia</h4>
-            <span>Ketua Subbidang Kerohanian</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/1_rt.png" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Imam Muhadi</h4>
-            <span>Ketua Subbidang Rumah Tangga</span>
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- End BIDANG 1 -->
+    @endif
+    @endforeach
+  </div>
+  <!-- End BIDANG 1 -->
 
-    <!-- ======= BIDANG 2 ======= -->
-    <div class="section-header">
-      <span>BIDANG 2 - PENCEGAHAN</span>
-      <h2>BIDANG 2 - PENCEGAHAN</h2>
-    </div>
-    <div class="row g-2 g-md-4" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/2_kabid.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Ryandra Diotama Subagja</h4>
-            <span>Ketua Bidang 2</span>
-          </div>
+  <!-- ======= BIDANG 2 ======= -->
+  <div class="section-header">
+    <span>BIDANG 2 - PENCEGAHAN</span>
+    <h2>BIDANG 2 - PENCEGAHAN</h2>
+  </div>
+  <div class="row g-2 g-md-4" data-aos="fade-up" data-aos-delay="100">
+    @foreach($team as $id=>$t)
+    @if($id >= 10 && $id <= 13) <div class="col-6 col-md-3">
+      <div class="member">
+        <img src="image/{{ $t->image }}" class="img-fluid" alt="" />
+        <div class="member-content">
+          <h4>{{ $t->name }}</h4>
+          <span>{{ $t->position }}</span>
         </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/2_sekbid.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Utari Zain Athaya</h4>
-            <span>Sekretaris Bidang 2</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/2_penyalahgunaan.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Yulia Eka Ardhani</h4>
-            <span>Ketua Subbidang Pencengahan Penyalahgunaan</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/2_peredaran.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Dini Pratiwi</h4>
-            <span>Ketua Subbidang Peredaran Gelap Narkoba</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End BIDANG 2 -->
+  </div>
+  @endif
+  @endforeach
+  </div>
+  <!-- End BIDANG 2 -->
 
-    <!-- ======= BIDANG 3 ======= -->
-    <div class="section-header">
-      <span>BIDANG 3 - HUBUNGAN MASYARAKAT</span>
-      <h2>BIDANG 3 - HUBUNGAN MASYARAKAT</h2>
-    </div>
-    <div class="row g-2 g-md-4" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/3_kabid.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Devanda Enrico Firmansyah</h4>
-            <span>Ketua Bidang 3</span>
-          </div>
+  <!-- ======= BIDANG 3 ======= -->
+  <div class="section-header">
+    <span>BIDANG 3 - HUBUNGAN MASYARAKAT</span>
+    <h2>BIDANG 3 - HUBUNGAN MASYARAKAT</h2>
+  </div>
+  <div class="row g-2 g-md-4" data-aos="fade-up" data-aos-delay="100">
+    @foreach($team as $id=>$t)
+    @if($id >= 14 && $id<=17) <div class="col-6 col-md-3">
+      <div class="member">
+        <img src="image/{{ $t->image }}" class="img-fluid" alt="" />
+        <div class="member-content">
+          <h4>{{ $t->name }}</h4>
+          <span>{{ $t->position }}</span>
         </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/3_sekbid.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Savira Aprilia Sintia Dewi</h4>
-            <span>Sekretaris Bidang 3</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/3_internal.png" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Amelia Marshanda Syahputri</h4>
-            <span>Ketua Subbidang Internal</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/3_eksternal.png" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Safrina Putri Kusumawardani</h4>
-            <span>Ketua Subbidang Eksternal</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End BIDANG 3 -->
+  </div>
+  @endif
+  @endforeach
+  </div>
+  <!-- End BIDANG 3 -->
 
-    <!-- ======= BIDANG 4 ======= -->
-    <div class="section-header">
-      <span>BIDANG 4 - TERAPI & REHABILITASI</span>
-      <h2>BIDANG 4 - TERAPI & REHABILITASI</h2>
-    </div>
-    <div class="row g-2 g-md-4" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/4_kabid.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Muhammad Faried Akmal Alaudien Yahya</h4>
-            <span>Ketua Bidang 4</span>
-          </div>
+  <!-- ======= BIDANG 4 ======= -->
+  <div class="section-header">
+    <span>BIDANG 4 - TERAPI & REHABILITASI</span>
+    <h2>BIDANG 4 - TERAPI & REHABILITASI</h2>
+  </div>
+  <div class="row g-2 g-md-4" data-aos="fade-up" data-aos-delay="100">
+    @foreach($team as $id=>$t)
+    @if($id >= 18 && $id<=21) <div class="col-6 col-md-3">
+      <div class="member">
+        <img src="image/{{ $t->image }}" class="img-fluid" alt="" />
+        <div class="member-content">
+          <h4>{{ $t->name }}</h4>
+          <span>{{ $t->position }}</span>
         </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/4_sekbid.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Ratih Luthfiya Dewi Fashihah</h4>
-            <span>Sekretaris Bidang 4</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/4_terapi.png" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Nadhira Aulia</h4>
-            <span>Ketua Subbidang Terapi</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/4_rehab.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Dolro Maruli Ritonga</h4>
-            <span>Ketua Subbidang Rehabilitasi</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End BIDANG 4 -->
+  </div>
+  @endif
+  @endforeach
+  </div>
+  <!-- End BIDANG 4 -->
 
-    <!-- ======= BIDANG 5 ======= -->
-    <div class="section-header">
-      <span>BIDANG 5 - PENELITIAN & PENGEMBANGAN</span>
-      <h2>BIDANG 5 - PENELITIAN & PENGEMBANGAN</h2>
-    </div>
-    <div class="row g-2 g-md-4" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/5_kabid.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Hanif Fikri Fauzan</h4>
-            <span>Ketua Bidang 5</span>
-          </div>
+  <!-- ======= BIDANG 5 ======= -->
+  <div class="section-header">
+    <span>BIDANG 5 - PENELITIAN & PENGEMBANGAN</span>
+    <h2>BIDANG 5 - PENELITIAN & PENGEMBANGAN</h2>
+  </div>
+  <div class="row g-2 g-md-4" data-aos="fade-up" data-aos-delay="100">
+    @foreach($team as $id=>$t)
+    @if($id >= 22 && $id<=25) <div class="col-6 col-md-3">
+      <div class="member">
+        <img src="image/{{ $t->image }}" class="img-fluid" alt="" />
+        <div class="member-content">
+          <h4>{{ $t->name }}</h4>
+          <span>{{ $t->position }}</span>
         </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/5_sekbid.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Hanni Syamrotul Ilmi</h4>
-            <span>Sekretaris Bidang 5</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/5_penelitian.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Ainun Chumairoh</h4>
-            <span>Ketua Subbidang Penelitian</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="member">
-          <img src="assets/img/team/5_pengembangan.jpg" class="img-fluid" alt="" />
-          <div class="member-content">
-            <h4>Hadyan Dwi Ariyanta</h4>
-            <span>Ketua Subbidang Pengembangan</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End BIDANG 1 -->
+  </div>
+  @endif
+  @endforeach
+  </div>
+  <!-- End BIDANG 5 -->
   </div>
 </section>
 <!-- End Our Team Section -->

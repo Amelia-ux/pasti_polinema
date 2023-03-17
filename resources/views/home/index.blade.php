@@ -66,12 +66,8 @@
     <div class="container">
       <div class="row gy-4 d-flex justify-content-between">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h2 data-aos="fade-up">UKM PASTI POLINEMA</h2>
+          <h2 data-aos="fade-up" style="color: #FFFF00">UKM PASTI POLINEMA</h2>
           <h4 data-aos="fade-up" data-aos-delay="100">Unit Kegiatan Mahasiswa Pasukan Anti Narkotika Politeknik Negeri Malang</h4>
-        </div>
-
-        <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-          <img src="{{ asset('guest/img/hero-img.svg') }}" class="img-fluid mb-3 mb-lg-0" alt="" />
         </div>
       </div>
     </div>
@@ -89,6 +85,7 @@
     <section id="about" class="about pt-0">
       <div class="container" data-aos="fade-up">
         <div class="row gy-4">
+          @if($about)
           <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
             <img src="{{ asset('guest/img/about.png') }}" class="img-fluid" alt="" />
             <a href="https://youtu.be/3qfT2xBV-n0" class="glightbox play-btn"></a>
@@ -96,19 +93,11 @@
           <div class="col-lg-6 content order-last order-lg-first">
             <h3>Tentang UKM PASTI POLINEMA</h3>
             <p>
-              &ensp; UKM PASTI POLINEMA adalah salah satu UKM di POLINEMA yang bergerak dalam bidang sosial – masyarakat, dimana UKM ini memiliki tujuan membebaskan Politeknik Negeri Malang pada khususnya dan seluruh lapisan masyarakat
-              pada umumnya dari dampak penyalaahgunaan dan peredaran gelap narkoba serta berbagai bahaya yang ditimbulkannya. UKM PASTI POLINEMA juga ikut serta mendukung terlaksananya program Badan Narkotika Nasional agar Indonesia Bebas
-              Narkoba 2015. Dengan kata lain, UKM PASTI POLINEMA adalah sekumpulan generasi muda yang siap ditempatkan di barisan terdepan dalam usaha pencegahan penyalahgunaan dan peredaran gelap narkoba di Politeknik Negeri Malang
-              khususnya dan masyarakat pada umumnya.
+              {{ $about->description }}
             </p>
           </div>
         </div>
-        <p>
-          <br />
-          Unit Kegiatan Mahasiswa Pasukan Anti Narkotika (PASTI) Politeknik Negeri Malang dibentuk pada bulan Februari tahun 2007, tetapi pada tahun 2008 UKM PASTI POLINEMA vakum dari berbagai kegiatan, karena masih mengalami kendala
-          dalam proses pelegalan untuk menjadi salah satu UKM di Polinema. Pada tanggal 20 Juni 2009 UKM PASTI POLINEMA diresmikan sebagai salah satu Unit Kegiatan Mahasiswa yang ada di Politeknik Negeri Malang. UKM PASTI POLINEMA juga
-          telah mengukir prestasi yang membanggakan sehingga dapat mengharumkan nama POLINEMA sebagai satu – satunya kampus yang bebas dari penyalahgunaan dan peredaran gelap narkoba di Indonesia.
-        </p>
+        @endif
       </div>
     </section>
     <!-- End About Us Section -->
@@ -204,15 +193,17 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="testimonial-item" style="word-spacing: 6em;">
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
+                @foreach($relation as $id=>$r)
+                @if($id
+                <= 3) <img src="image/(( $r->image }}" class="testimonial-img" alt="" />
               </div>
+              @endif
+              @endforeach
               <div class="testimonial-item">
-                <h3>UKM GERMAN &emsp;&emsp;&emsp; UKM GERMAN &emsp;&emsp;&emsp; UKM GERMAN &emsp;&emsp;&emsp; UKM GERMAN</h3>
+                <h3>{{$r->instance }} &emsp;&emsp;&emsp; {{$r->instance }} &emsp;&emsp;&emsp; {{$r->instance }} &emsp;&emsp;&emsp; {{$r->instance }}</h3>
               </div>
             </div>
+
             <!-- End testimonial item -->
 
             <div class="swiper-slide">

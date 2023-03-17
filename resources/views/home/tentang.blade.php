@@ -57,43 +57,33 @@
   <section id="about" class="about pt-0">
     <div class="container" data-aos="fade-up">
       <div class="row gy-4">
+        @if($about)
         <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
-          <img src="{{ asset('guest/img/about.png') }}" class="img-fluid" alt="" />
+          <img src="image/{{ $about->image }}" class="img-fluid" alt="" />
           <a href="https://youtu.be/3qfT2xBV-n0" class="glightbox play-btn"></a>
         </div>
         <div class="col-lg-6 content order-last order-lg-first">
           <h3>Tentang UKM PASTI POLINEMA</h3>
           <p>
-            &ensp; UKM PASTI POLINEMA adalah salah satu UKM di POLINEMA yang bergerak dalam bidang sosial – masyarakat, dimana UKM ini memiliki tujuan membebaskan Politeknik Negeri Malang pada khususnya dan seluruh lapisan masyarakat
-            pada umumnya dari dampak penyalaahgunaan dan peredaran gelap narkoba serta berbagai bahaya yang ditimbulkannya. UKM PASTI POLINEMA juga ikut serta mendukung terlaksananya program Badan Narkotika Nasional agar Indonesia Bebas
-            Narkoba 2015. Dengan kata lain, UKM PASTI POLINEMA adalah sekumpulan generasi muda yang siap ditempatkan di barisan terdepan dalam usaha pencegahan penyalahgunaan dan peredaran gelap narkoba di Politeknik Negeri Malang
-            khususnya dan masyarakat pada umumnya.
+            {{ $about->description }}
           </p>
         </div>
       </div>
-      <p>
-        <br />
-        Unit Kegiatan Mahasiswa Pasukan Anti Narkotika (PASTI) Politeknik Negeri Malang dibentuk pada bulan Februari tahun 2007, tetapi pada tahun 2008 UKM PASTI POLINEMA vakum dari berbagai kegiatan, karena masih mengalami kendala
-        dalam proses pelegalan untuk menjadi salah satu UKM di Polinema. Pada tanggal 20 Juni 2009 UKM PASTI POLINEMA diresmikan sebagai salah satu Unit Kegiatan Mahasiswa yang ada di Politeknik Negeri Malang. UKM PASTI POLINEMA juga
-        telah mengukir prestasi yang membanggakan sehingga dapat mengharumkan nama POLINEMA sebagai satu – satunya kampus yang bebas dari penyalahgunaan dan peredaran gelap narkoba di Indonesia.
-      </p>
     </div>
   </section>
   <!-- End SEJARAH -->
 
-  <!-- ======= VISI MISI ======= -->
+  <!-- ======= VISI MISI ======= --> -->
   <section id="features" class="features">
     <div class="container">
       <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
         <div class="col-md-5">
-          <img src="assets/img/logo pasti.jpg" class="img-fluid" alt="" />
+          <img src="image/{{ $about->image }}" class="img-fluid" alt="" />
         </div>
         <div class="col-md-7 order-2 order-md-1">
           <h3>VISI UKM PASTI</h3>
-          <p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-            qui officia deserunt mollit anim id est laborum
+            {{ $about->description}}
           </p>
         </div>
       </div>
@@ -101,22 +91,20 @@
 
       <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
         <div class="col-md-5 order-1 order-md-2">
-          <img src="assets/img/logo pasti.jpg" class="img-fluid" alt="" />
+          <img src="image/{{ $about->image }}" class="img-fluid" alt="" />
         </div>
         <div class="col-md-7">
           <h3>MISI UKM PASTI</h3>
-          <p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <ul>
-            <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="bi bi-check"></i> Ullam est qui quos consequatur eos accusamus.</li>
-          </ul>
+          <p>
+            {{ $about->description }}
+          </p>
         </div>
       </div>
       <!-- Features Item -->
     </div>
+    @endif
   </section>
-  <!-- End VISI MISI -->
+  <!-- End VISI MISI
 
   <!-- ======= Frequently Asked Questions Section ======= -->
   <section id="faq" class="faq">

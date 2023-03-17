@@ -3,28 +3,28 @@
 @section('title', 'Program Kerja')
 
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="/" class="logo d-flex align-items-center">
-        <img src="{{ asset('guest/img/logo pasti.jpg') }}" alt="" />
-      </a>
+<!-- ======= Header ======= -->
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+    <a href="/" class="logo d-flex align-items-center">
+      <img src="{{ asset('guest/img/logo pasti.jpg') }}" alt="" />
+    </a>
 
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      <nav id="navbar" class="navbar">
-        <ul>
+    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    <nav id="navbar" class="navbar">
+      <ul>
         <li><a href="/">Beranda</a></li>
-          <li><a href="/tentang" >Tentang</a></li>
-          <li><a href="/proker" class="active">Program Kerja</a></li>
-          <li><a href="/struktur">Struktur Organisasi</a></li>
-          <li><a href="/kontak" >Kontak</a></li>
-        </ul>
-      </nav>
-      <!-- .navbar -->
-    </div>
-  </header>
-  <!-- End Header -->
+        <li><a href="/tentang">Tentang</a></li>
+        <li><a href="/proker" class="active">Program Kerja</a></li>
+        <li><a href="/struktur">Struktur Organisasi</a></li>
+        <li><a href="/kontak">Kontak</a></li>
+      </ul>
+    </nav>
+    <!-- .navbar -->
+  </div>
+</header>
+<!-- End Header -->
 
 @section('breadcrumbs')
 <!-- ======= Breadcrumbs ======= -->
@@ -65,50 +65,20 @@
       </p>
     </div>
     <div class="row gy-4">
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      @foreach($workplan as $id=>$work)
+      @if($id <=3) <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="card">
           <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
+            <img src="image/{{ $work->image }}" alt="" class="img-fluid" />
           </div>
-          <h3><a href="#" class="stretched-link">Malam Keakraban</a></h3>
-          <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
+          <h3><a href="#" class="stretched-link">{{ $work->name }}</a></h3>
+          <p>{{ $work->description }}</p>
         </div>
-      </div>
-      <!-- End Card Item -->
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="card">
-          <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
-          </div>
-          <h3><a href="#" class="stretched-link">Pelepasan Alumni</a></h3>
-          <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-        </div>
-      </div>
-      <!-- End Card Item -->
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="card">
-          <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
-          </div>
-          <h3><a href="#" class="stretched-link">Dies Natalis</a></h3>
-          <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-        </div>
-      </div>
-      <!-- End Card Item -->
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="card">
-          <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
-          </div>
-          <h3><a href="#" class="stretched-link">Musyawarah Kerja</a></h3>
-          <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-        </div>
-      </div>
-      <!-- End Card Item -->
     </div>
+    @endif
+    @endforeach
+    <!-- End Card Item -->
+  </div>
   </div>
 </section>
 <!-- End BIDANG 1 -->
@@ -127,28 +97,20 @@
       </p>
     </div>
     <div class="row gy-4">
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      @foreach($workplan as $id=>$work)
+      @if($id >=4 && $id <= 5) <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="card">
           <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
+            <img src="image/{{ $work->image }}" alt="" class="img-fluid" />
           </div>
-          <h3><a href="#" class="stretched-link">Tes Urine</a></h3>
-          <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
+          <h3><a href="#" class="stretched-link">{{ $work->name }}</a></h3>
+          <p>{{ $work->description }}</p>
         </div>
-      </div>
-      <!-- End Card Item -->
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="card">
-          <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
-          </div>
-          <h3><a href="#" class="stretched-link">Penyuluhan</a></h3>
-          <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-        </div>
-      </div>
-      <!-- End Card Item -->
     </div>
+    @endif
+    @endforeach
+    <!-- End Card Item -->
+  </div>
   </div>
 </section>
 <!-- End BIDANG 2 -->
@@ -167,15 +129,19 @@
       </p>
     </div>
     <div class="row gy-4">
+      @foreach($workplan as $id=>$work)
+      @if($id == 6)
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="card">
           <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
+            <img src="image/{{ $work->image }}" alt="" class="img-fluid" />
           </div>
-          <h3><a href="#" class="stretched-link">Expo Kelembagaan</a></h3>
-          <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
+          <h3><a href="#" class="stretched-link">{{ $work->name }}</a></h3>
+          <p>{{ $work->description }}</p>
         </div>
       </div>
+      @endif
+      @endforeach
       <!-- End Card Item -->
     </div>
   </div>
@@ -195,28 +161,20 @@
       </p>
     </div>
     <div class="row gy-4">
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      @foreach($workplan as $id=>$work)
+      @if($id >=7 && $id <= 8) <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="card">
           <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
+            <img src="image/{{ $work->image }}" alt="" class="img-fluid" />
           </div>
-          <h3><a href="#" class="stretched-link">Peringatan HANI</a></h3>
-          <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
+          <h3><a href="#" class="stretched-link">{{ $work->name }}</a></h3>
+          <p>{{ $work->description }}</p>
         </div>
-      </div>
-      <!-- End Card Item -->
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="card">
-          <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
-          </div>
-          <h3><a href="#" class="stretched-link">Peringatan AIDS Sedunia</a></h3>
-          <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-        </div>
-      </div>
-      <!-- End Card Item -->
     </div>
+    @endif
+    @endforeach
+    <!-- End Card Item -->
+  </div>
   </div>
 </section>
 <!-- End BIDANG 4 -->
@@ -234,59 +192,19 @@
       </p>
     </div>
     <div class="row gy-4">
+      @foreach($workplan as $id=>$work)
+      @if($id >=9)
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="card">
           <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
+            <img src="image/{{ $work->image }}" alt="" class="img-fluid" />
           </div>
-          <h3><a href="#" class="stretched-link">Malam Keakraban</a></h3>
-          <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
+          <h3><a href="#" class="stretched-link">{{ $work->name }}</a></h3>
+          <p>{{ $work->description }}</p>
         </div>
       </div>
-      <!-- End Card Item -->
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="card">
-          <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
-          </div>
-          <h3><a href="#" class="stretched-link">Open Recruitment</a></h3>
-          <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-        </div>
-      </div>
-      <!-- End Card Item -->
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="card">
-          <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
-          </div>
-          <h3><a href="#" class="stretched-link">Upgrading</a></h3>
-          <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-        </div>
-      </div>
-      <!-- End Card Item -->
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="card">
-          <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
-          </div>
-          <h3><a href="#" class="stretched-link">Penempuhan NIA</a></h3>
-          <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-        </div>
-      </div>
-      <!-- End Card Item -->
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="card">
-          <div class="card-img">
-            <img src="assets/img/logo pasti.jpg" alt="" class="img-fluid" />
-          </div>
-          <h3><a href="#" class="stretched-link">Pelatihan Dasar</a></h3>
-          <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-        </div>
-      </div>
+      @endif
+      @endforeach
       <!-- End Card Item -->
     </div>
   </div>

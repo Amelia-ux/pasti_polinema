@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tentang UKM')
+@section('title', 'Data Relasi')
 
 <div class="main-menu menu-fixed menu-dark menu-bg-default rounded menu-accordion menu-shadow">
     <div class="main-menu-content"><a class="navigation-brand d-none d-md-block d-lg-block d-xl-block" href="index.html"><img class="brand-logo" alt="CryptoDash admin logo" src="{{ asset('assets/app-assets/images/ico/logo pasti.jpg') }}" /></a>
