@@ -6,6 +6,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
   <title>@yield('title') - PASTI POLINEMA</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
 
   <!-- Favicons -->
   <link href="{{ asset('assets/app-assets/images/ico/logo pasti.jpg') }}" rel="icon" />
@@ -45,7 +47,7 @@
     <div class="container mt-4">
       <div class="copyright">
         <div class="social-links d-flex justify-content-center">
-          <a href="https://twitter.com/PastiPolinemahttps://www.instagram.com/pastipolinema/" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="https://twitter.com/PastiPolinema?t=svi7HJgkx2gz0-dhx63eyg&s=08" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
           <a href="https://www.facebook.com/UkmPastiPolinema/" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/pastipolinema/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
         </div>

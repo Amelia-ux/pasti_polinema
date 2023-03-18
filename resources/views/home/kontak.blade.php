@@ -28,7 +28,7 @@
 @section('breadcrumbs')
 <!-- ======= Breadcrumbs ======= -->
 <div class="breadcrumbs">
-  <div class="page-header d-flex align-items-center" style="background-image: url('guest/img/page-header.jpg')">
+  <div class="page-header d-flex align-items-center" style="background-image: url('guest/img/OPREC.jpg')">
     <div class="container position-relative">
       <div class="row d-flex justify-content-center">
         <div class="col-lg-6 text-center">
@@ -59,30 +59,37 @@
     </div>
     <!-- End Google Maps -->
 
-    @foreach($contact as $con)
+
     <div class="row gy-4 mt-4">
       <div class="col-lg-4">
+        @foreach($contact as $id=>$con)
+        @if($id == 2)
         <div class="info-item d-flex">
           <i class="bi bi-geo-alt flex-shrink-0"></i>
           <div>
             <h4>Lokasi:</h4>
-            <p>{{$con->description}}</p>
+            <p>{{$con->link}}</p>
           </div>
         </div>
         <!-- End Info Item -->
+        @endif
+        @endforeach
 
+        @foreach($contact as $id=>$con)
+        @if($id == 3)
         <div class="info-item d-flex">
           <i class="bi bi-envelope flex-shrink-0"></i>
           <div>
             <h4>Email:</h4>
-            <p>{{$con->description}}</p>
+            <p>{{$con->link}}</p>
           </div>
         </div>
         <!-- End Info Item -->
+        @endif
+        @endforeach
       </div>
       <!-- End Contact Form -->
     </div>
-    @endforeach
   </div>
 </section>
 <!-- End Contact Section -->

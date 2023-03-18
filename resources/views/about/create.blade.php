@@ -52,7 +52,7 @@
                                         <div class="col-12">
                                             <fieldset class="form-group">
                                                 <label for="description">Isi</label>
-                                                <textarea class="form-control" rows="10" cols="20" id="description" name="description" value="" required="" autofocus=""></textarea>
+                                                <textarea class="form-control" rows="10" cols="20" id="description" name="description" value="" required="" autofocus="" style="display: list-item"></textarea>
                                             </fieldset>
                                         </div>
                                         @error('title')

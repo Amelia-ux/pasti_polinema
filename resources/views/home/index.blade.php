@@ -111,73 +111,21 @@
         </div>
 
         <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          @foreach($workplan as $id=>$work)
+          @if($id <=5) <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
               <div class="card-img">
-                <img src="{{ asset('guest/img/logo pasti.jpg') }}" alt="" class="img-fluid" />
+                <img src="image/{{ $work->image }}" alt="" class="img-fluid" />
               </div>
-              <h3><a href="proker.html" class="stretched-link">Malam Keakraban</a></h3>
-              <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
+              <h3><a href="proker.html" class="stretched-link">{{ $work->name }}</a></h3>
+              <p>{{ $work->description }}</p>
             </div>
-          </div>
-          <!-- End Card Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <div class="card-img">
-                <img src="{{ asset('guest/img/logo pasti.jpg') }}" alt="" class="img-fluid" />
-              </div>
-              <h3><a href="proker.html" class="stretched-link">Penyuluhan</a></h3>
-              <p>Asperiores provident dolor accusamus pariatur dolore nam id audantium ut et iure incidunt molestiae dolor ipsam ducimus occaecati nisi</p>
-            </div>
-          </div>
-          <!-- End Card Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="card">
-              <div class="card-img">
-                <img src="{{ asset('guest/img/logo pasti.jpg') }}" alt="" class="img-fluid" />
-              </div>
-              <h3><a href="proker.html" class="stretched-link">Expo Kelembagaan</a></h3>
-              <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-            </div>
-          </div>
-          <!-- End Card Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="card">
-              <div class="card-img">
-                <img src="{{ asset('guest/img/logo pasti.jpg') }}" alt="" class="img-fluid" />
-              </div>
-              <h3><a href="proker.html" class="stretched-link">Open Recruitment</a></h3>
-              <p>Dicta quam similique quia architecto eos nisi aut ratione aut ipsum reiciendis sit doloremque oluptatem aut et molestiae ut et nihil</p>
-            </div>
-          </div>
-          <!-- End Card Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="card">
-              <div class="card-img">
-                <img src="{{ asset('guest/img/logo pasti.jpg') }}" alt="" class="img-fluid" />
-              </div>
-              <h3><a href="proker.html" class="stretched-link">Hari Anti Narkotika Internasional</a></h3>
-              <p>Illo consequuntur quisquam delectus praesentium modi dignissimos facere vel cum onsequuntur maiores beatae consequatur magni voluptates</p>
-            </div>
-          </div>
-          <!-- End Card Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="card">
-              <div class="card-img">
-                <img src="{{ asset('guest/img/logo pasti.jpg') }}" alt="" class="img-fluid" />
-              </div>
-              <h3><a href="proker.html" class="stretched-link">Musyawarah Kerja</a></h3>
-              <p>Quas assumenda non occaecati molestiae. In aut earum sed natus eatae in vero. Ab modi quisquam aut nostrum unde et qui est non quo nulla</p>
-            </div>
-          </div>
-          <!-- End Card Item -->
         </div>
-        <a href="/proker">Selengkapnya<i class="bi bi-arrow-right-short"></i></a>
+        @endif
+        @endforeach
+        <!-- End Card Item -->
+      </div>
+      <a href="/proker">Selengkapnya<i class="bi bi-arrow-right-short"></i></a>
       </div>
     </section>
     <!-- End PROKER -->
@@ -193,60 +141,52 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="testimonial-item" style="word-spacing: 6em;">
-                @foreach($relation as $id=>$r)
-                @if($id
-                <= 3) <img src="image/(( $r->image }}" class="testimonial-img" alt="" />
-              </div>
-              @endif
-              @endforeach
-              <div class="testimonial-item">
-                <h3>{{$r->instance }} &emsp;&emsp;&emsp; {{$r->instance }} &emsp;&emsp;&emsp; {{$r->instance }} &emsp;&emsp;&emsp; {{$r->instance }}</h3>
-              </div>
-            </div>
-
-            <!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="word-spacing: 6em;">
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
+                <img src="{{ asset('image/BNN.png') }}" class="testimonial-img" alt="" />
+                <img src="{{ asset('image/POLRES.png') }}" class="testimonial-img" alt="" />
+                <img src="{{ asset('image/PEMKOT malang.png') }}" class="testimonial-img" alt="" />
               </div>
               <div class="testimonial-item">
-                <h3>UKM GERMAN &emsp;&emsp;&emsp; UKM GERMAN &emsp;&emsp;&emsp; UKM GERMAN &emsp;&emsp;&emsp; UKM GERMAN</h3>
+                <h3>&emsp;BNN &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; KAPOLRES MALANG &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; PEMKOT MALANG</h3>
               </div>
             </div>
             <!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item" style="word-spacing: 6em;">
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
+                <img src="{{ asset('image/LOGO GERMAN YES.png') }}" class="testimonial-img" alt="" />
+                <img src="{{ asset('image/LOGO UKM PERDANA.jpg') }}" class="testimonial-img" alt="" />
+                <img src="{{ asset('image/LOGO_CTA.jpg') }}" class="testimonial-img" alt="" />
+                <img src="{{ asset('image/LOGO_GARANK[1].png') }}" class="testimonial-img" alt="" />
               </div>
               <div class="testimonial-item">
-                <h3>UKM GERMAN &emsp;&emsp;&emsp; UKM GERMAN &emsp;&emsp;&emsp; UKM GERMAN &emsp;&emsp;&emsp; UKM GERMAN</h3>
+                <h3>UKM GERMAN &emsp;&emsp;&emsp;&emsp; UKM PERDANA &emsp;&emsp;&emsp;&emsp; UKM CTA &emsp;&emsp;&emsp;&emsp; UKM GARANK</h3>
               </div>
             </div>
             <!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item" style="word-spacing: 6em;">
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
-                <img src="{{ asset('guest/img/testimonials/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
+                <img src="{{ asset('image/LOGO_GESANK.png') }}" class="testimonial-img" alt="" />
+                <img src="{{ asset('image/LOGO_KOMANDO.png') }}" class="testimonial-img" alt="" />
+                <img src="{{ asset('image/LOGO_TEGAZS.jpeg') }}" class="testimonial-img" alt="" />
+                <img src="{{ asset('image/LOGO_UKM PESAN.jpg') }}" class="testimonial-img" alt="" />
               </div>
               <div class="testimonial-item">
-                <h3>UKM GERMAN &emsp;&emsp;&emsp; UKM GERMAN &emsp;&emsp;&emsp; UKM GERMAN &emsp;&emsp;&emsp; UKM GERMAN</h3>
+                <h3>UKM GESANK &emsp;&emsp;&emsp;&emsp; UKM KOMANDO &emsp;&emsp;&emsp;&emsp; UKM TEGAZS &emsp;&emsp;&emsp;&emsp; UKM PESAN</h3>
               </div>
             </div>
             <!-- End testimonial item -->
 
+            <div class="swiper-slide">
+              <div class="testimonial-item" style="word-spacing: 6em;">
+                <img src="{{ asset('image/LOGO_UKM PIKK-R SEHATI.jpg') }}" class="testimonial-img" alt="" />
+              </div>
+              <div class="testimonial-item">
+                <h3>UKM PIKK-R SEHATI</h3>
+              </div>
+            </div>
+            <!-- End testimonial item -->
           </div>
-          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>

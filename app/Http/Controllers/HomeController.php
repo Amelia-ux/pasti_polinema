@@ -28,7 +28,6 @@ class HomeController extends Controller
     public function tentang()
     {
         $about = About::all();
-        $about = About::first();
         return view('home.tentang', compact(
             'about'
         ));
